@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is a test site to fix common SEO and accessibility mistakes.">
     <title>Hjem</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <header class="header">
       <span class="logo" aria-hidden="true"></span> <!-- bevisst: viktig info kun i bilde uten tekstalternativ -->
-      <span class="site-title">Min side</span>
+      <h1 class="site-title">Min side</h1>
     </header>
 
-    <nav class="nav" role="navigation"> <!-- bevisst: upresist role og ingen semantisk <nav> -->
+    <nav class="nav">
       <a href="#">Hjem</a>
       <a href="#">Om oss</a>
       <div class="dropdown">
@@ -30,13 +31,13 @@
       <p>Viktig beskjed: Les dette! Klikk her! Klikk her! Klikk her! Veldig viktig! ✨</p>
     </div>
 
-    <table class="layout" role="presentation"> <!-- bevisst: tabell for layout -->
+    <table class="layout"> <!-- bevisst: tabell for layout -->
       <tr>
         <td class="sidebar">
           <div class="card" id="sekjson">
             <h4>Nyheter</h4> <!-- bevisst: hopper over h1/h2/h3 -->
             <p>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt=""> <!-- bevisst: tom alt på meningsbærende bilde -->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Her er det innholdbeskrivelse nummer 1"> 
               <a class="tiny-link" href="#">Klikk her</a> for å lese mer om ting.
             </p>
             <p class="status-ok">Tilgjengelig</p>
@@ -46,8 +47,8 @@
           <div class="card">
             <h4>Språk</h4>
             <p>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Norway.svg" alt="no"> <!-- bevisst: alt «no» er ikke beskrivende -->
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg" alt="en">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Norway.svg" alt="Flagget til Norge"> 
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg" alt="Flagget til Storbritannia">
             </p>
           </div>
         </td>
@@ -64,10 +65,12 @@
 
           <div class="card form">
             <h4>Kontakt oss</h4>
-            <!-- bevisst: ingen <label> og kun placeholder, dupliserte id-er, dårlig kontrast, farge som eneste signal -->
+            <label for="navn">Navnefelt</label>
             <input type="text" id="navn" placeholder="Navn*">
-            <input type="email" id="navn" placeholder="E-post*"> <!-- bevisst: duplisert id -->
-            <input type="tel" placeholder="Telefon">
+            <label for="mail">E-postfelt</label>
+            <input type="email" id="mail" placeholder="E-post*">
+            <label for="tlf">Nummerfelt</label>
+            <input type="tel" id="tlf" placeholder="Telefon">
             <select>
               <option>Velg tema*</option>
               <option>Bestilling</option>
@@ -93,7 +96,7 @@
 
           <div class="card">
             <h4>Tabell uten overskrifter</h4>
-            <table border="1" width="100%">
+            <table>
               <tr><td>1</td><td>2</td><td>3</td></tr>
               <tr><td>4</td><td>5</td><td>6</td></tr>
               <tr><td>7</td><td>8</td><td>9</td></tr>
@@ -113,12 +116,11 @@
       </tr>
     </table>
 
-    <div style="text-align:center; padding: 10px; background: rgba(255,255,255,0.6)">
-      <!-- bevisst: kontaktinfo kun i bilde uten alt-tekst -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Facebook_icon.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Twitter_logo.svg">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+    <section id="bottom">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Facebook_icon.svg" alt="Kontaktinfo Facebook">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Twitter_logo.svg" alt="Kontaktinfo Twitter">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Kontaktinfo Instagram">
       <p style="font-size:10px; color:#bfbfbf">© 2025 ACME</p>
-    </div>
+    </section>
   </body>
 </html>
