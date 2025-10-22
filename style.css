@@ -102,9 +102,28 @@ body {
 
 
 /* bevisst: løpende/blinkende tekst (forstyrrende) */
-.ticker { white-space: nowrap; overflow: hidden; background: rgba(255,255,0,0.3); color:#cccc00; font-weight: bold; }
-.ticker p { display: inline-block; padding-left: 100%; animation: scroll 8s linear infinite; }
-@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+.ticker {
+    white-space: nowrap;
+    background: rgb(249, 249, 242);
+    color:#535443;
+    font-weight: bold;
+    p {
+        display: inline-block;
+        padding-left: 100%;
+        animation: scroll 24s linear infinite;
+    }
+}
+
+@keyframes scroll 
+{ 
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
 
 /* layout-tabell (dårlig praksis) */
 .layout { width: 960px; margin: 10px auto; background: rgba(255,255,255,0.6); }
@@ -134,7 +153,13 @@ a {
 }
 
       /* bevisst: hardfixet høyde, tekst kan bli avkuttet ved zoom */
-.card { height: 140px; overflow: hidden; background: rgba(255,255,255,0.5); border: 1px solid #e3e3e3; padding: 10px; margin-bottom: 10px; }
+.card {
+    height: 140px;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid #e3e3e3;
+    padding: 10px;
+    margin-bottom: 10px;
+}
 
       /* bevisst: skrift på bakgrunnsbilde uten bakgrunnsfarge */
 .hero {
@@ -149,23 +174,57 @@ a {
 }
 
       /* bevisst: formular uten labels (kun placeholders) og dårlig kontrast */
-      .form { background: rgba(255,255,255,0.5); padding: 10px; }
-      .form input, .form select, .form textarea { display:block; width: 260px; padding: 4px; margin: 6px 0; font-size: 11px; color:#a1a1a1; border:1px solid #dcdcdc; }
-      .form .required { color: #cc0000; } /* bevisst: kun farge indikerer krav */
-      .form .help { font-size: 10px; color: #bbbbbb; }
-      .form .fake-submit { background:#efefef; border:1px solid #e0e0e0; padding: 6px 10px; display:inline-block; }
+.form {
+    background: rgba(255,255,255,0.5);
+    padding: 10px;
+
+    input, select, textarea {
+        display:block;
+        width: 260px;
+        padding: 4px;
+        margin: 6px 0;
+        font-size: 1rem;
+        color: var(--text-color);
+        border:1px solid #dcdcdc;
+    }
+
+    .required {
+        color: #cc0000;
+    }
+
+    .help {
+        font-size: 1rem;
+        color: var(--text-color);
+    }
+
+    .fake-submit {
+        background:#efefef;
+        border:1px solid #e0e0e0;
+        padding: 6px 10px;
+        display:inline-block;
+    }
+}
+
 
       /* bevisst: positiv tabindex skaper rar rekkefølge */
-      .weird-order [tabindex] { border: 1px solid #000; }
+.weird-order [tabindex] { border: 1px solid #000; }
 
       /* bevisst: lav kontrast på skjemafeil */
-      .error { color:#ff9999; }
+.error {
+    color:#ff9999;
+}
 
       /* bevisst: tekst i store bokstaver og sentrert – vanskelig lesbarhet */
-      .shout { text-transform: uppercase; text-align:center; letter-spacing: 3px; }
+.shout {
+    text-transform: uppercase;
+    text-align:center;
+}
 
       /* bevisst: alt for smal linjelengde og justified */
-      .narrow { width: 180px; text-align: justify; }
+.narrow {
+    width: 180px;
+    text-align: justify;
+}
 
 #bottom {
     text-align: center;
@@ -176,5 +235,8 @@ a {
     }
 }
 
-      /* print-uvennlig */
-      @media print { body { background: #000; color:#000; } }
+@media print {
+    body {
+        background: #ffffff; color:#000;
+    }
+}
