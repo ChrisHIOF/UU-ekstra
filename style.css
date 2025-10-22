@@ -153,7 +153,6 @@ a {
 
       /* bevisst: hardfixet høyde, tekst kan bli avkuttet ved zoom */
 .card {
-    height: 140px;
     background: rgba(255,255,255,0.5);
     border: 1px solid #e3e3e3;
     padding: 10px;
