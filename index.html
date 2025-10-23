@@ -70,7 +70,7 @@
             <h2>Denne teksten er veldig vanskelig å lese fordi den er smal, i store bokstaver og har lav kontrast. Den er også justert med blokkjustering som kan skape store mellomrom i linjene. Klikk her for mer info.</h2>
 
 
-          <div class="card form">
+          <form class="card form">
             <h4>Kontakt oss</h4>
             <label for="navn">Navn</label>
             <input type="text" id="navn" placeholder="Navn*">
@@ -78,11 +78,14 @@
             <input type="email" id="mail" placeholder="E-post*">
             <label for="telefon">Nummer</label>
             <input type="tel" id="telefon" placeholder="Telefon">
-            <select>
-              <option>Velg tema*</option>
-              <option>Bestilling</option>
-              <option>Support</option>
-            </select>
+            <label>
+              Emne:
+              <select>
+                <option>Velg tema*</option>
+                <option>Bestilling</option>
+                <option>Support</option>
+              </select>
+            </label>
             <label>
               Tekstfelt:
               <textarea rows="3" placeholder="Melding..."></textarea>
@@ -90,7 +93,7 @@
             <p class="help">Felt merket med <span class="required">rød farge</span> er obligatoriske.</p>
             <p class="error">skjemaet er feil utfylt</p> <!-- bevisst: lav kontrast på feilmelding, små bokstaver -->
             <span class="fake-submit" role="button" tabindex="5">Send</span> <!-- bevisst: span som knapp, positiv tabindex -->
-          </div>
+          </form>
 
           <div class="card weird-order">
             <h4>Mer innhold</h4>
