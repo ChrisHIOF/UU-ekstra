@@ -146,6 +146,11 @@ a {
     border: 1px solid #450202;
 }
 
+#copyright {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
 #sekjson {
     padding: 8px;
     margin-top: 8px;

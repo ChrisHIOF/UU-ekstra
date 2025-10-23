@@ -71,7 +71,7 @@
 
 
           <form class="card form">
-            <h4>Kontakt oss</h4>
+            <h3>Kontakt oss</h3>
             <label for="navn">Navn</label>
             <input type="text" id="navn" placeholder="Navn*">
             <label for="mail">E-post</label>
@@ -79,33 +79,32 @@
             <label for="telefon">Nummer</label>
             <input type="tel" id="telefon" placeholder="Telefon">
             <label for="meny">Emne:</label>
-              <select id="meny">
-                <option>Velg tema*</option>
-                <option>Bestilling</option>
-                <option>Support</option>
-              </select>
-
+            <select id="meny">
+              <option>Velg tema*</option>
+              <option>Bestilling</option>
+              <option>Support</option>
+            </select>
             <label for="tekst">Tekstfelt:</label>
-              <textarea id="tekst" rows="3" placeholder="Melding..."></textarea>
+            <textarea id="tekst" rows="3" placeholder="Melding..."></textarea>
             <p class="help">Felt merket med <span class="required">rød farge</span> er obligatoriske.</p>
             <p class="error">skjemaet er feil utfylt</p> <!-- bevisst: lav kontrast på feilmelding, små bokstaver -->
-            <span class="fake-submit" role="button" tabindex="5">Send</span> <!-- bevisst: span som knapp, positiv tabindex -->
+            <span class="fake-submit" role="button">Send</span> <!-- bevisst: span som knapp-->
           </form>
 
           <div class="card weird-order">
-            <h4>Mer innhold</h4>
+            <h3>Mer innhold</h3>
             <p>
-              <a href="#" tabindex="3">Les mer</a> |
-              <a href="#" tabindex="1">Klikk her</a> |
-              <a href="#" tabindex="2">Trykk her</a>
+              <a href="#">Les mer</a> |
+              <a href="#">Klikk her</a> |
+              <a href="#">Trykk her</a>
             </p>
             <p>
-              <span class="btn" tabindex="4">Primær handling</span>
+              <span class="btn">Primær handling</span>
             </p>
           </div>
 
           <div class="card">
-            <h4>Tabell uten overskrifter</h4>
+            <h3>Tabell uten overskrifter</h3>
             <table border="1" width="100%">
               <tr><td>1</td><td>2</td><td>3</td></tr>
               <tr><td>4</td><td>5</td><td>6</td></tr>
@@ -114,7 +113,7 @@
           </div>
 
           <div class="card">
-            <h4>Masse lenker med samme tekst</h4>
+            <h3>Masse lenker med samme tekst</h3>
             <ul>
               <li><a href="#">Les mer</a></li>
               <li><a href="#">Les mer</a></li>
@@ -131,7 +130,7 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Facebook_icon.svg" alt="Facebook logobilde">
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Twitter_logo.svg" alt="Twitter logobilde">
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram logobilde">
-      <p style="font-size:10px; color:#bfbfbf">© 2025 ACME</p>
+      <p id="copyright">© 2025 ACME</p>
     </footer>
   </body>
 </html>
