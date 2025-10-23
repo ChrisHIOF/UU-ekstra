@@ -1,77 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+  VIKTIG: Denne filen er BEVISST DÅRLIG for undervisning.
+  Den bryter en rekke WCAG-prinsipper og norsk UU-forskrift.
+  Oppgaven for studentene er å identifisere og forbedre feilene.
+  (Kun HTML + CSS – ingen JS.)
+-->
+<html lang="nb">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="This is a test site to fix common SEO and accessibility mistakes.">
-    <title>Hjem</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Forside for verden beste nettside</title> 
   </head>
   <body>
-
-    <header class="header">
+    <header>
       <span class="logo" aria-hidden="true"></span> <!-- bevisst: viktig info kun i bilde uten tekstalternativ -->
-      <h1 class="site-title">Min side</h1>
+      <span class="site-title">Min side</span>
     </header>
 
-    <nav class="nav">
-      <a href="#">Hjem</a>
-      <a href="#">Om oss</a>
-      <div class="dropdown">
-        <a href="#">Tjenester</a>
-        <ul>
-          <li><a href="#">Design</a></li>
-          <li><a href="#">Utvikling</a></li>
-          <li><a href="#">Konsulent</a></li>
-        </ul>
-      </div>
-      <a href="#">Kontakt</a>
+    <nav>
+      <ul>
+        <li><a href="#">Hjem</a></li>
+        <li><a href="#">Om oss</a></li>
+        <li>
+          <details>
+            <summary>Tjenester</summary>
+            <ul>
+              <li><a hre="#">Design</a></li>
+              <li><a hre="#">Utvikling</a></li>
+              <li><a hre="#">Konsulent</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="#">Kontakt></a></li>
+      </ul>
     </nav>
 
-    <section class="ticker">
+    <section>
       <p>Viktig beskjed: Les dette! Klikk her! Klikk her! Klikk her! Veldig viktig! ✨</p>
     </section>
 
-    <main class="layout"> <!-- bevisst: tabell for layout -->
-      <tr>
-        <td class="sidebar">
-          <div class="card" id="sekjson">
+
+        <aside>
+          <section>
             <h4>Nyheter</h4> <!-- bevisst: hopper over h1/h2/h3 -->
             <p>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt="Her er det innholdbeskrivelse nummer 1"> 
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt=""> <!-- bevisst: tom alt på meningsbærende bilde -->
               <a class="tiny-link" href="#">Klikk her</a> for å lese mer om ting.
             </p>
             <p class="status-ok">Tilgjengelig</p>
             <p class="status-bad">Utilgjengelig</p>
-          </div>
+          </section>
 
-          <div class="card">
+          <section>
             <h4>Språk</h4>
             <p>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Norway.svg" alt="Flagget til Norge"> 
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg" alt="Flagget til Storbritannia">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Norway.svg" alt="no"> <!-- bevisst: alt «no» er ikke beskrivende -->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg" alt="en">
             </p>
-          </div>
-        </td>
-        <td>
-          <div class="hero">
-            VELKOMMEN TIL DEN BESTE SIDEN NOENSINNE (LES VIKTIG TEKST HER OVER BAKGRUNNSBILDE)
-          </div>
+          </section>
+        </aside>
 
-          <div class="card shout">
-            <div class="narrow">
-              Denne teksten er veldig vanskelig å lese fordi den er smal, i store bokstaver og har lav kontrast. Den er også justert med blokkjustering som kan skape store mellomrom i linjene. Klikk her for mer info.
-            </div>
-          </div>
+        <main>
+          <h1>
+            VELKOMMEN TIL DEN BESTE SIDEN NOENSINNE (LES VIKTIG TEKST HER OVER BAKGRUNNSBILDE)
+          </h1>
+
+          <section>
+            <h2>Denne teksten er veldig vanskelig å lese fordi den er smal, i store bokstaver og har lav kontrast. Den er også justert med blokkjustering som kan skape store mellomrom i linjene. Klikk her for mer info.</h2>
+
 
           <div class="card form">
             <h4>Kontakt oss</h4>
-            <label for="navn">Navnefelt</label>
+            <!-- bevisst: ingen <label> og kun placeholder, dupliserte id-er, dårlig kontrast, farge som eneste signal -->
             <input type="text" id="navn" placeholder="Navn*">
-            <label for="mail">E-postfelt</label>
-            <input type="email" id="mail" placeholder="E-post*">
-            <label for="tlf">Nummerfelt</label>
-            <input type="tel" id="tlf" placeholder="Telefon">
+            <input type="email" id="navn" placeholder="E-post*"> <!-- bevisst: duplisert id -->
+            <input type="tel" placeholder="Telefon">
             <select>
               <option>Velg tema*</option>
               <option>Bestilling</option>
@@ -97,7 +101,7 @@
 
           <div class="card">
             <h4>Tabell uten overskrifter</h4>
-            <table>
+            <table border="1" width="100%">
               <tr><td>1</td><td>2</td><td>3</td></tr>
               <tr><td>4</td><td>5</td><td>6</td></tr>
               <tr><td>7</td><td>8</td><td>9</td></tr>
@@ -113,14 +117,15 @@
               <li><a href="#">Les mer</a></li>
             </ul>
           </div>
-        </td>
-      </tr>
-    </main>
+          </section>
+        </main>
 
-    <footer id="bottom">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Facebook_icon.svg" alt="Kontaktinfo Facebook">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Twitter_logo.svg" alt="Kontaktinfo Twitter">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Kontaktinfo Instagram">
+
+    <footer>
+      <!-- bevisst: kontaktinfo kun i bilde uten alt-tekst -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Facebook_icon.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Twitter_logo.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
       <p style="font-size:10px; color:#bfbfbf">© 2025 ACME</p>
     </footer>
   </body>
