@@ -17,30 +17,32 @@ body {
 }
 
 
-/* bevisst: semantikk-brudd – alt er div-suppe */
 .header {
-    height: 80px;
-    background: rgba(255,255,255,0.6);
-    text-align:center;
+    height: 6rem;
+    background: rgba(65, 84, 129, 0.9);
     text-transform: uppercase;
     letter-spacing: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
 .logo {
     display:inline-block;
-    width: 60px;
-    height: 60px;
+    width: 4rem;
+    height: 4rem;
     background: url('https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg');
     background-size: contain;
     background-repeat: no-repeat;
     vertical-align: middle;
-    margin-top: 10px;
+    
 }
 
 .site-title {
     display:inline-block;
-    font-size: 16px;
-    color: #450202;
+    font-size: 2rem;
+    color: #400245;
     vertical-align: middle;
 }
 
@@ -156,12 +158,29 @@ a {
     margin-top: 8px;
 }
 
-      /* bevisst: hardfixet høyde, tekst kan bli avkuttet ved zoom */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+
+    h2 {
+        text-wrap: balance;
+    }
+
+    li {
+        list-style: none;
+
+    }
+}
+
 .card {
-    background: rgba(255,255,255,0.5);
+    background: rgb(152, 170, 194);
     border: 1px solid #e3e3e3;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 1rem;
+    margin: 0.5rem;
+    max-width: 30%;
 }
 
       /* bevisst: skrift på bakgrunnsbilde uten bakgrunnsfarge */
@@ -171,24 +190,22 @@ a {
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 18px;
+    font-size: 1.5rem;
     font-weight: 700;
     color:#070707; 
 }
 
       /* bevisst: formular uten labels (kun placeholders) og dårlig kontrast */
 .form {
-    background: rgba(255,255,255,0.5);
-    padding: 10px;
+    padding: 1rem;
 
     input, select, textarea {
         display:block;
         width: 260px;
-        padding: 4px;
-        margin: 6px 0;
+        padding: 0.5rem;
         font-size: 1rem;
         color: var(--text-color);
-        border:1px solid #dcdcdc;
+        border:1px solid #000000;
     }
 
     .required {
@@ -203,31 +220,23 @@ a {
     .fake-submit {
         background:#efefef;
         border:1px solid #e0e0e0;
-        padding: 6px 10px;
+        padding: 0.5rem;
+        margin: 0.5rem 0.5rem 0.5rem 0;
         display:inline-block;
     }
 }
 
 
-      /* bevisst: positiv tabindex skaper rar rekkefølge */
-.weird-order [tabindex] { border: 1px solid #000; }
-
-      /* bevisst: lav kontrast på skjemafeil */
 .error {
-    color:#ff9999;
+    color:#f22e2e;
 }
 
-      /* bevisst: tekst i store bokstaver og sentrert – vanskelig lesbarhet */
 .shout {
-    text-transform: uppercase;
-    text-align:center;
+    font-weight: 800;
+    text-transform: underline;
 }
 
-      /* bevisst: alt for smal linjelengde og justified */
-.narrow {
-    width: 180px;
-    text-align: justify;
-}
+
 
 #bottom {
     text-align: center;

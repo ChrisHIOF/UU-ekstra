@@ -1,25 +1,20 @@
 <!DOCTYPE html>
-<!--
-  VIKTIG: Denne filen er BEVISST DÅRLIG for undervisning.
-  Den bryter en rekke WCAG-prinsipper og norsk UU-forskrift.
-  Oppgaven for studentene er å identifisere og forbedre feilene.
-  (Kun HTML + CSS – ingen JS.)
--->
 <html lang="nb">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A website to learn about fixing shit.">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Forside for verden beste nettside</title> 
   </head>
   <body>
-    <header>
-      <span class="logo" aria-hidden="true"></span> <!-- bevisst: viktig info kun i bilde uten tekstalternativ -->
+    <header class="header">
+      <span class="logo"></span> 
       <span class="site-title">Min side</span>
     </header>
 
     <nav>
-      <ul>
+      <ul class="flex-container">
         <li><a href="#">Hjem</a></li>
         <li><a href="#">Om oss</a></li>
         <li>
@@ -40,98 +35,94 @@
       <p>Viktig beskjed: Les dette! Klikk her! Klikk her! Klikk her! Veldig viktig! ✨</p>
     </section>
 
+    <main>
+      <h1>
+        VELKOMMEN TIL DEN BESTE SIDEN NOENSINNE (LES VIKTIG TEKST HER OVER BAKGRUNNSBILDE)
+      </h1>
 
-        <aside>
-          <section>
-            <h4>Nyheter</h4> <!-- bevisst: hopper over h1/h2/h3 -->
-            <p>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt=""> 
-              <a class="tiny-link" href="#">Klikk her</a> for å lese mer om ting.
-            </p>
-            <p class="status-ok">Tilgjengelig</p>
-            <p class="status-bad">Utilgjengelig</p>
-          </section>
+      <section class="flex-container">
+        <h2>Denne teksten er veldig vanskelig å lese fordi den er smal, i store bokstaver og har lav kontrast. Den er også justert med blokkjustering som kan skape store mellomrom i linjene. Klikk her for mer info.</h2>
 
-          <section>
-            <h4>Språk</h4>
-            <p>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Norway.svg" alt="no"> <!-- bevisst: alt «no» er ikke beskrivende -->
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg" alt="en">
-            </p>
-          </section>
-        </aside>
+        <form class="card form">
+          <h3>Kontakt oss</h3>
+          <label for="navn">Navn</label>
+          <input type="text" id="navn" placeholder="Navn*">
+          <label for="mail">E-post*</label>
+          <input type="email" id="mail" placeholder="E-post" required>
+          <label for="telefon">Nummer</label>
+          <input type="tel" id="telefon" placeholder="Telefon">
+          <label for="meny">Emne:</label>
+          <select id="meny" required>
+            <option>Velg tema*</option>
+            <option>Bestilling</option>
+            <option>Support</option>
+          </select>
+          <label for="tekst">Tekstfelt:</label>
+          <textarea id="tekst" rows="3" placeholder="Melding..." required></textarea>
+          <button class="fake-submit">Send</button>
+        </form>
 
-        <main>
-          <h1>
-            VELKOMMEN TIL DEN BESTE SIDEN NOENSINNE (LES VIKTIG TEKST HER OVER BAKGRUNNSBILDE)
-          </h1>
+        <article class="card">
+          <h3>Mer innhold</h3>
+          <p>
+            <a href="#">Les mer</a> |
+            <a href="#">Klikk her</a> |
+            <a href="#">Trykk her</a>
+          </p>
+          <p>
+            <button class="btn">Primær handling</button>
+          </p>
+        </article>
 
-          <section>
-            <h2>Denne teksten er veldig vanskelig å lese fordi den er smal, i store bokstaver og har lav kontrast. Den er også justert med blokkjustering som kan skape store mellomrom i linjene. Klikk her for mer info.</h2>
+        <article class="card">
+          <h3>Tabell uten overskrifter</h3>
+          <table>
+            <tr>
+              <th>Tall 1</th><th>Tall 2</th><th>Tall 3</th>
+            </tr>
+            <tr>
+              <td>1</td><td>2</td><td>3</td>
+            </tr>
+            <tr>
+              <td>4</td><td>5</td><td>6</td>
+            </tr>
+            <tr>
+              <td>7</td><td>8</td><td>9</td>
+            </tr>
+          </table>
+        </article>
 
+        <article class="card">
+          <h3>Masse lenker med samme tekst</h3>
+          <ul>
+            <li><a href="#">Les mer</a></li>
+            <li><a href="#">Les mer</a></li>
+            <li><a href="#">Les mer</a></li>
+            <li><a href="#">Les mer</a></li>
+          </ul>
+        </article>
+      </section>
+    </main>
 
-          <form class="card form">
-            <h3>Kontakt oss</h3>
-            <label for="navn">Navn</label>
-            <input type="text" id="navn" placeholder="Navn*">
-            <label for="mail">E-post</label>
-            <input type="email" id="mail" placeholder="E-post*">
-            <label for="telefon">Nummer</label>
-            <input type="tel" id="telefon" placeholder="Telefon">
-            <label for="meny">Emne:</label>
-            <select id="meny">
-              <option>Velg tema*</option>
-              <option>Bestilling</option>
-              <option>Support</option>
-            </select>
-            <label for="tekst">Tekstfelt:</label>
-            <textarea id="tekst" rows="3" placeholder="Melding..."></textarea>
-            <p class="help">Felt merket med <span class="required">rød farge</span> er obligatoriske.</p>
-            <p class="error">skjemaet er feil utfylt</p> <!-- bevisst: lav kontrast på feilmelding, små bokstaver -->
-            <span class="fake-submit" role="button">Send</span> <!-- bevisst: span som knapp-->
-          </form>
+    <aside>
+      <section>
+        <h4>Nyheter</h4> <!-- bevisst: hopper over h1/h2/h3 -->
+        <p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt=""> 
+          <a class="tiny-link" href="#">Klikk her</a> for å lese mer om ting.
+        </p>
+        <p class="status-ok">Tilgjengelig</p>
+        <p class="status-bad">Utilgjengelig</p>
+      </section>
 
-          <div class="card weird-order">
-            <h3>Mer innhold</h3>
-            <p>
-              <a href="#">Les mer</a> |
-              <a href="#">Klikk her</a> |
-              <a href="#">Trykk her</a>
-            </p>
-            <p>
-              <span class="btn">Primær handling</span>
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Tabell uten overskrifter</h3>
-            <table>
-              <tr>
-                <th>Tall 1</th><th>Tall 2</th><th>Tall 3</th>
-              </tr>
-              <tr>
-                <td>1</td><td>2</td><td>3</td>
-              </tr>
-              <tr>
-                <td>4</td><td>5</td><td>6</td>
-              </tr>
-              <tr>
-                <td>7</td><td>8</td><td>9</td>
-              </tr>
-            </table>
-          </div>
-
-          <div class="card">
-            <h3>Masse lenker med samme tekst</h3>
-            <ul>
-              <li><a href="#">Les mer</a></li>
-              <li><a href="#">Les mer</a></li>
-              <li><a href="#">Les mer</a></li>
-              <li><a href="#">Les mer</a></li>
-            </ul>
-          </div>
-          </section>
-        </main>
+      <section>
+        <h4>Språk</h4>
+        <p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Norway.svg" alt="no"> <!-- bevisst: alt «no» er ikke beskrivende -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg" alt="en">
+        </p>
+      </section>
+    </aside>
 
 
     <footer id="bottom">
