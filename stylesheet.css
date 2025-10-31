@@ -25,3 +25,7 @@ body {
     background-repeat: no-repeat;
     vertical-align: middle;
 }
+
+img {
+    max-width: 50px;
+}
